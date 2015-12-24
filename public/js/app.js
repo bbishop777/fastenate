@@ -44,12 +44,13 @@ $.getJSON('./api/get_the_app.json', function(data)  {//normally we would probabl
 
     var date = $('<span>');
       date.addClass('date');
-      date.text(age);
+      var when = moment(age, 'X').fromNow();
+      date.text(when);
       authDateViews.append(date);
 
     var viewed = $('<span>');
       viewed.addClass('view');
-      date.text(views + " views");
+      viewed.text(views + " views");
       authDateViews.append(viewed);
 
     var text = $('<div>');
